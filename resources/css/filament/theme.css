@@ -1,0 +1,13 @@
+@import '../../../vendor/filament/filament/resources/css/theme.css';
+@import "../../../node_modules/cropperjs/dist/cropper.css";
+@import '../../../vendor/awcodes/filament-curator/resources/css/plugin.css';
+@source '../../../vendor/bezhansalleh/filament-language-switch/resources/views/**/*.blade.php';
+
+@config 'tailwind.config.js';
+
+[x-cloak] {
+    display: none !important;
+}
+.grid-image .filepond--item {
+    width: calc(33.3% - 0.5em);
+}
