@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Contract extends Model
+class Contract extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'contract_number',
@@ -103,6 +105,14 @@ class Contract extends Model
     }
 
     /**
+     * Polymorphic relationship with Approvals
+     */
+    public function approvals()
+    {
+        return $this->morphMany(Approval::class, 'approvable');
+    }
+
+    /**
      * Scope for new contracts
      */
     public function scopeNew($query)
@@ -116,6 +126,14 @@ class Contract extends Model
     public function scopeApproved($query)
     {
         return $query->where('status', self::STATUS_APPROVED);
+    }
+
+    /**
+     * Get documents media collection
+     */
+    public function getDocuments()
+    {
+        return $this->getMedia('documents');
     }
 
     /**

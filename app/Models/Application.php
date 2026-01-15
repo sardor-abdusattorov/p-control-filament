@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Application extends Model
+class Application extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -77,6 +79,14 @@ class Application extends Model
     }
 
     /**
+     * Polymorphic relationship with Approvals
+     */
+    public function approvals()
+    {
+        return $this->morphMany(Approval::class, 'approvable');
+    }
+
+    /**
      * Scope for new applications
      */
     public function scopeNew($query)
@@ -90,6 +100,14 @@ class Application extends Model
     public function scopeApproved($query)
     {
         return $query->where('status', self::STATUS_APPROVED);
+    }
+
+    /**
+     * Get documents media collection
+     */
+    public function getDocuments()
+    {
+        return $this->getMedia('documents');
     }
 
     /**

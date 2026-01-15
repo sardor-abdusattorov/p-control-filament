@@ -28,6 +28,7 @@
     "outerweb/filament-settings": "^1.3",
     "pboivin/filament-peek": "^2.2",
     "sinnbeck/markdom": "^2.0",
+    "spatie/laravel-medialibrary": "^11.17",
     "spatie/laravel-translatable": "^6.11",
     "z3d0x/filament-logger": "^0.8.0"
   },

@@ -21,7 +21,10 @@ class ContactSubcategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-folder';
 
-    protected static ?string $navigationGroup = 'Contacts';
+    public static function getNavigationGroup(): ?string
+    {
+        return __('app.label.contacts');
+    }
 
     protected static ?int $navigationSort = 2;
 

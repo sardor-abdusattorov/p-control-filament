@@ -63,6 +63,10 @@ return [
         'user_single' => 'User',
         'user_plural' => 'Users',
 
+        // Navigation Groups
+        'contacts' => 'Contacts',
+        'projects_and_contracts' => 'Projects & Contracts',
+
         'id' => 'ID',
         'avatar' => 'Avatar',
         'email' => 'Email',

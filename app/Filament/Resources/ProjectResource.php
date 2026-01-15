@@ -19,7 +19,10 @@ class ProjectResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
-    protected static ?string $navigationGroup = 'Projects & Contracts';
+    public static function getNavigationGroup(): ?string
+    {
+        return __('app.label.projects_and_contracts');
+    }
 
     protected static ?int $navigationSort = 1;
 
@@ -46,7 +49,7 @@ class ProjectResource extends Resource
                                     ->maxValue(99999999999999.99),
                                 Forms\Components\Select::make('currency_id')
                                     ->label('Currency')
-                                    ->relationship('currency', 'code')
+                                    ->relationship('currency', 'short_name')
                                     ->searchable()
                                     ->preload(),
                                 Forms\Components\Select::make('status')
@@ -91,7 +94,7 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('budget_sum')
                     ->money()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('currency.code')
+                Tables\Columns\TextColumn::make('currency.short_name')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('status')
@@ -134,7 +137,7 @@ class ProjectResource extends Resource
                     ->preload(),
                 Tables\Filters\SelectFilter::make('currency_id')
                     ->label('Currency')
-                    ->relationship('currency', 'code')
+                    ->relationship('currency', 'short_name')
                     ->searchable()
                     ->preload(),
             ])
