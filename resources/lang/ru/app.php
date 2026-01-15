@@ -63,6 +63,10 @@ return [
         'user_single' => 'Пользователь',
         'user_plural' => 'Пользователи',
 
+        // Группы навигации
+        'contacts' => 'Контакты',
+        'projects_and_contracts' => 'Проекты и контракты',
+
         'id' => 'ID',
         'avatar' => 'Аватар',
         'email' => 'Почта',

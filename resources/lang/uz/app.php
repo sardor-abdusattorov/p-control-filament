@@ -61,6 +61,10 @@ return [
         'user_single' => 'Foydalanuvchi',
         'user_plural' => 'Foydalanuvchilar',
 
+        // Navigatsiya guruhlari
+        'contacts' => 'Kontaktlar',
+        'projects_and_contracts' => 'Loyihalar va shartnomalar',
+
         'id' => 'ID',
         'avatar' => 'Avatar',
         'email' => 'Pochta',

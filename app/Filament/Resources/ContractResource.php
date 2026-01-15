@@ -19,7 +19,10 @@ class ContractResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-check';
 
-    protected static ?string $navigationGroup = 'Projects & Contracts';
+    public static function getNavigationGroup(): ?string
+    {
+        return __('app.label.projects_and_contracts');
+    }
 
     protected static ?int $navigationSort = 3;
 
