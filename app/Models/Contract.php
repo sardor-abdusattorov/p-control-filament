@@ -103,6 +103,14 @@ class Contract extends Model
     }
 
     /**
+     * Polymorphic relationship with Approvals
+     */
+    public function approvals()
+    {
+        return $this->morphMany(Approval::class, 'approvable');
+    }
+
+    /**
      * Scope for new contracts
      */
     public function scopeNew($query)

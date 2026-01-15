@@ -77,6 +77,14 @@ class Application extends Model
     }
 
     /**
+     * Polymorphic relationship with Approvals
+     */
+    public function approvals()
+    {
+        return $this->morphMany(Approval::class, 'approvable');
+    }
+
+    /**
      * Scope for new applications
      */
     public function scopeNew($query)
