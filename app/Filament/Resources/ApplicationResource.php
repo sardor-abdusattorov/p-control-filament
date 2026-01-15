@@ -77,6 +77,20 @@ class ApplicationResource extends Resource
                                     ->default(Application::STATUS_NEW),
                             ]),
                     ]),
+
+                Forms\Components\Section::make('Documents')
+                    ->schema([
+                        Forms\Components\SpatieMediaLibraryFileUpload::make('documents')
+                            ->collection('documents')
+                            ->multiple()
+                            ->reorderable()
+                            ->downloadable()
+                            ->openable()
+                            ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'image/*'])
+                            ->maxSize(10240)
+                            ->helperText('Upload documents (PDF, Word, Excel, Images). Max 10MB per file.'),
+                    ])
+                    ->collapsed(),
             ]);
     }
 
