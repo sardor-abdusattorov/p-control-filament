@@ -75,6 +75,11 @@ return [
         'roles' => 'Roles',
         'role' => 'Role',
 
+        // Theme and Language Switchers
+        'toggle_theme' => 'Toggle theme',
+        'switch_to_light' => 'Switch to light theme',
+        'switch_to_dark' => 'Switch to dark theme',
+
     ],
 
     'status' => [

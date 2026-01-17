@@ -72,6 +72,11 @@ return [
         'password_confirmation' => 'Parolni tasdiqlash',
         'roles' => 'Rollar',
         'role' => 'Rol',
+
+        // Theme and Language Switchers
+        'toggle_theme' => 'Mavzuni almashtirish',
+        'switch_to_light' => 'Yorug\'lik mavzusiga o\'tish',
+        'switch_to_dark' => 'Qorong\'u mavzuga o\'tish',
     ],
 
     'status' => [

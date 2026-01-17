@@ -74,6 +74,11 @@ return [
         'password_confirmation' => 'Подтверждение пароля',
         'roles' => 'Роли',
         'role' => 'Роль',
+
+        // Theme and Language Switchers
+        'toggle_theme' => 'Переключить тему',
+        'switch_to_light' => 'Переключить на светлую тему',
+        'switch_to_dark' => 'Переключить на тёмную тему',
     ],
 
     'helper' => [
