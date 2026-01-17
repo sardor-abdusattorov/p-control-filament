@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Filament\Pages\Settings\Settings;
 use Awcodes\Curator\CuratorPlugin;
+use BezhanSalleh\FilamentLanguageSwitch\FilamentLanguageSwitchPlugin;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Cmsmaxinc\FilamentSystemVersions\Filament\Widgets\DependencyWidget;
 use DiogoGPinto\AuthUIEnhancer\AuthUIEnhancerPlugin;
@@ -103,6 +104,9 @@ class AdminPanelProvider extends PanelProvider
                     ->shouldShowSanctumTokens(false)
                     ->shouldShowBrowserSessionsForm()
                     ->shouldShowAvatarForm(),
+
+                FilamentLanguageSwitchPlugin::make()
+                    ->outsidePanelRoutes(),
 
             ])
             ->navigationGroups([
